@@ -31,13 +31,19 @@
   margin: 10px 5px 10px 5px;
 }
 
-
-
-.page-source{
+.page-source-container{
   float: left;
   margin-bottom: 25px;
   text-align: left;
   width: 100%;
+}
+
+#page-source{
+  background-color:#eee;
+  overflow: hidden;
+  overflow-y: auto;
+  max-height: 350px;
+
 }
 
 #domain{

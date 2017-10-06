@@ -84,11 +84,12 @@ class HTMLScraper extends Component {
 
   displaySource(){
     const self = this;
+    var inlineStyle= { border: '1 px solid #ccc'}
     if (self.state.display==='true'){
       return (
-        <div className="page-source">
+        <div className="page-source-container">
           <h3> <u> Page Source </u> </h3>
-          <p > {self.state.pageSource} </p>
+          <p id='page-source' style={inlineStyle}> {self.state.pageSource} </p>
         </div>
         )
     } 
