@@ -16,6 +16,7 @@ class HTMLScraper extends Component {
   }
 
 
+  // Goes through data and returns object with tags and number of instances
   countTags(responseData){
     const self = this;
     var counter = {};
@@ -54,6 +55,7 @@ class HTMLScraper extends Component {
   }
 
 
+  // Makes a CORS GET request via axios to obtain page source. Else, sets error message
   getHTML(){
     const self = this;
 
@@ -69,6 +71,7 @@ class HTMLScraper extends Component {
     })
   }
 
+  // Sets state for search value
   setSearchValue (event){
     const self = this;
     self.setState({searchValue: event.target.value, searchType: "Search"}, function(){
@@ -76,12 +79,15 @@ class HTMLScraper extends Component {
     })
   }
 
+  // Toggling page source view
   toggleSource(event){
     const self = this;
     self.setState({display: event.target.value}) //for some reason, event target value is string instead of boolean
 
   }
 
+  // Displays the page source in a scrollable text area
+  // Inline style was used so border would not stay static and only appear when there is text 
   displaySource(){
     const self = this;
     var inlineStyle= { border: '1 px solid #ccc'}
@@ -95,6 +101,7 @@ class HTMLScraper extends Component {
     } 
   }
 
+  // Displays the list of tags and the number of times they've appeared in the page source
   displayTagCounter(){
     const self = this;
     if (self.state.searchValue!=='' && self.state.error!=='true'){
